@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
+    "build:cloudflare": "next build && mkdir -p out/functions && cp -r functions/* out/functions/ 2>/dev/null || true",
     "start": "next start",
     "lint": "eslint"
   },

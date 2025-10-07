@@ -29,16 +29,16 @@ git push -u origin main
 
 ## Step 3: Configure Build Settings
 
-**Framework preset:** Next.js
+**Framework preset:** Next.js (Static HTML Export)
 
 **Build command:**
 ```bash
-npm run build
+npm run build:cloudflare
 ```
 
 **Build output directory:**
 ```
-.next
+out
 ```
 
 **Root directory (optional):**
@@ -61,6 +61,9 @@ If you need any environment variables, add them in the **Environment variables**
 2. Wait 2-5 minutes for the build to complete
 3. You'll get a URL like: `https://3pltexas.pages.dev`
 
+### Note on API Functions
+The site includes a Cloudflare Pages Function for handling contact form submissions. The function is automatically deployed from the `functions/api` directory and will be available at `/api/leads` endpoint.
+
 ## Step 6: Custom Domain (3pltexas.net)
 
 1. In Cloudflare Pages, go to your project
@@ -81,9 +84,9 @@ Every time you push to `main` branch, Cloudflare Pages will automatically:
 ## Build Settings Reference
 
 ```yaml
-Framework: Next.js
-Build command: npm run build
-Build output directory: .next
+Framework: Next.js (Static HTML Export)
+Build command: npm run build:cloudflare
+Build output directory: out
 Root directory: web
 Node version: 18.17.0 or higher
 ```
